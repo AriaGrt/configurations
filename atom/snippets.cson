@@ -1,0 +1,84 @@
+#JS FILES
+'.source.js':
+  #Pure JS
+  'Default Import':
+    'prefix': 'imp'
+    'body': 'import $1 from "$2" $3'
+  'Destructured Import':
+    'prefix': 'imd'
+    'body': 'import {$1} from "$2" $3'
+  'Default Export':
+    'prefix': 'dexp'
+    'body': 'export default $1'
+  'Explicit Arrow Function':
+    'prefix': 'arr'
+    'body': '($1) => {$2}'
+  'Default Big Return Arrow Function':
+    'prefix': 'darr('
+    'body': '($1) => ($2)'
+  'Default Return Arrow Function':
+    'prefix': 'darr'
+    'body': '($1) => $2'
+  'array.prototype.map':
+    'prefix': 'map'
+    'body': """
+      map((x, index) => {
+        $1
+      })
+    """
+  #ReactJS
+  'React Component Default Function':
+    'prefix': 'reactfunc'
+    'body': """
+      import React from 'react'
+      import PropTypes from "prop-types"
+
+      const $1 = ({$2}) => (
+        $4
+      )
+
+      $1.propTypes = {
+        $3
+      }
+
+      export default $1
+    """
+  'React Component Explicit Function':
+    'prefix': 'reactexpfunc'
+    'body': """
+      import React from 'react'
+      import PropTypes from "prop-types"
+
+      const $1 = ({$2}) => {
+        $4
+        return()
+      }
+
+      $1.propTypes = {
+        $3
+      }
+
+      export default $1
+    """
+  #JSX
+  'li jsx tag':
+    'prefix': 'li'
+    'body': '<li>$1</li>'
+  'ul jsx tag':
+    'prefix': 'ul'
+    'body': '<ul>$1</ul>'
+  'span jsx tag':
+    'prefix': 'span'
+    'body': '<span>$1</span>'
+  'a jsx tag':
+    'prefix': 'a'
+    'body': """
+      <a
+        href="$1"$2
+      >
+        $3
+      </a>
+    """
+  'p jsx tag':
+    'prefix': 'p'
+    'body': '<p>$1</p>'
